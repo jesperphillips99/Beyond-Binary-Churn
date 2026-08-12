@@ -1,0 +1,4 @@
+strategy,accuracy,balanced_acc,macro_f1,weighted_f1
+most_frequent,0.631,0.25,0.1934,0.4882
+stratified,0.4535,0.2501,0.2501,0.4534
+prior,0.631,0.25,0.1934,0.4882

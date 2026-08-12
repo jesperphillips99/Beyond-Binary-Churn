@@ -1,0 +1,4 @@
+model,CHURN,CONTRACTION,STABLE,EXPANSION
+02b regress-volume,0.4181,0.151,0.7588,0.0562
+02b regress-ratio,0.4154,0.0377,0.7625,0.1782
+Direct LightGBM comparator,0.4136,0.3202,0.6024,0.4156

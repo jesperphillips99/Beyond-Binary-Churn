@@ -1,0 +1,20 @@
+{
+  "device": "mps",
+  "num_features": 24,
+  "cat_cards": [
+    37,
+    39,
+    22,
+    4,
+    6
+  ],
+  "seq_window": 60,
+  "seq_features": [
+    "total_secs",
+    "num_100",
+    "num_unq",
+    "num_25"
+  ],
+  "val_macro_f1_hybrid": 0.45734913514182707,
+  "val_macro_f1_static": 0.42960701326317785
+}

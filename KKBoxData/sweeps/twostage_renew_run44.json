@@ -1,0 +1,19 @@
+{
+  "name": "twostage_renew_run44",
+  "best_params": {
+    "n_estimators": 800,
+    "learning_rate": 0.03,
+    "num_leaves": 255,
+    "min_child_samples": 50,
+    "colsample_bytree": 0.85,
+    "subsample": 0.85,
+    "reg_lambda": 0.0,
+    "subsample_freq": 1
+  },
+  "best_score": 0.7299971088117972,
+  "meta": {
+    "n_trials": 16,
+    "subsample": 199999,
+    "cv_folds": 3
+  }
+}

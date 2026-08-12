@@ -1,0 +1,20 @@
+{
+  "arch": "HybridNetV2 (bi-GRU 2x128 + attention pooling, base+horizon static)",
+  "n_seeds": 3,
+  "epochs_max": 30,
+  "member_val_f1": [
+    0.45763728344021376,
+    0.4685314619849964,
+    0.45823464606442976
+  ],
+  "ensemble_val_f1": 0.4643283726490942,
+  "tuned_val_f1": 0.5121969368336055,
+  "class_weights": [
+    0.5182332964408191,
+    1.097786406234366,
+    1.7496489266511137,
+    1.0877262520869828
+  ],
+  "num_static_features": 44,
+  "holdout_macro_f1": 0.5117476228064548
+}

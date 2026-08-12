@@ -1,0 +1,20 @@
+{
+  "name": "direct_xgb_run46",
+  "best_params": {
+    "n_estimators": 800,
+    "learning_rate": 0.05,
+    "max_depth": 10,
+    "min_child_weight": 20,
+    "subsample": 0.7,
+    "colsample_bytree": 0.85,
+    "reg_lambda": 0.0,
+    "gamma": 0.5
+  },
+  "best_score": 0.45147886282780547,
+  "meta": {
+    "seed": 46,
+    "n_trials": 16,
+    "subsample": 199999,
+    "cv_folds": 3
+  }
+}

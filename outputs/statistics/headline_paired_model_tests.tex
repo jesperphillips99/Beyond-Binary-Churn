@@ -1,0 +1,16 @@
+% Requires \usepackage{booktabs} in the preamble.
+\begin{table}[t]
+\centering
+\caption{Paired comparisons of headline models on run-level Macro-F1 (five matched user-grouped holdout runs, $n=5$). CIs are paired $t$ 95\% intervals; permutation and Wilcoxon columns are sensitivity analyses.}
+\label{tab:headline_paired_tests}
+\begin{tabular}{lcccccccc}
+\toprule
+Contrast & $\Delta$ Macro-F1 & 95\% CI & Wins & $t(4)$ & $p_{t}$ & $p_{t,\mathrm{Holm}}$ & $p_{\mathrm{perm}}$ & $p_{\mathrm{Wilcox}}$ \\
+\midrule
+Tuned DL ensemble vs Direct XGBoost & +0.0736 & [0.0704, 0.0767] & 5/5 & 64.356 & 0.0000 & 0.0000 & 0.0625 & 0.0625 \\
+Tuned DL ensemble vs Tuned two-stage & +0.0742 & [0.0658, 0.0825] & 5/5 & 24.719 & 0.0000 & 0.0000 & 0.0625 & 0.0625 \\
+Direct XGBoost vs Tuned two-stage & +0.0006 & [-0.0064, 0.0076] & 3/5 & 0.234 & 0.8266 & 0.8266 & 0.8125 & 0.8125 \\
+Direct XGBoost vs Direct LightGBM & +0.0013 & [0.0008, 0.0019] & 5/5 & 6.948 & 0.0023 & 0.0045 & 0.0625 & 0.0625 \\
+\bottomrule
+\end{tabular}
+\end{table}

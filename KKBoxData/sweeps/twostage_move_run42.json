@@ -1,0 +1,19 @@
+{
+  "name": "twostage_move_run42",
+  "best_params": {
+    "n_estimators": 500,
+    "learning_rate": 0.03,
+    "num_leaves": 255,
+    "min_child_samples": 20,
+    "colsample_bytree": 1.0,
+    "subsample": 0.7,
+    "reg_lambda": 5.0,
+    "subsample_freq": 1
+  },
+  "best_score": 0.4726814793169673,
+  "meta": {
+    "n_trials": 24,
+    "subsample": 200000,
+    "cv_folds": 3
+  }
+}

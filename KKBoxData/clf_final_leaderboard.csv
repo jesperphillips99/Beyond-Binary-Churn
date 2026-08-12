@@ -1,0 +1,8 @@
+model,macro_f1,balanced_acc,accuracy,weighted_f1
+DL ensemble x3 (tuned)  [MAIN],0.5117,0.5677,0.6081,0.6163
+DL ensemble x3 (argmax),0.4649,0.5976,0.5158,0.5412
+DL hybrid (GRU+static),0.4575,0.5906,0.5043,0.5295
+Two-stage (tuned),0.4387,0.572,0.4928,0.5201
+Direct LightGBM,0.4379,0.5728,0.4913,0.5186
+DL static-only (MLP),0.4293,0.5591,0.4962,0.5244
+Two-stage (arg-max),0.415,0.5685,0.4717,0.5025

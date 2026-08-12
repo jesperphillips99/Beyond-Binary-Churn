@@ -1,0 +1,5 @@
+,dl_hybrid_single,dl_ensemble_tuned
+CHURN,0.419,0.502
+CONTRACTION,0.371,0.37
+STABLE,0.6,0.731
+EXPANSION,0.439,0.444

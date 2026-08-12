@@ -1,0 +1,186 @@
+{
+  "created": "2026-07-07T22:41:14",
+  "n_events": 6133147,
+  "n_modellable": 3784500,
+  "class_order": [
+    "CHURN",
+    "CONTRACTION",
+    "STABLE",
+    "EXPANSION",
+    "INSUFFICIENT_DATA"
+  ],
+  "id_cols": [
+    "msno",
+    "E",
+    "expiry_month"
+  ],
+  "split_cols": [
+    "user_fold",
+    "is_holdout",
+    "month_idx",
+    "is_modellable"
+  ],
+  "targets": {
+    "multiclass": "label",
+    "renewal_stage1": "renewed",
+    "ratio_regression": "vol_ratio"
+  },
+  "leakage_cols": [
+    "renewed",
+    "n_grace_txns",
+    "grace_end",
+    "first_renewal_date",
+    "post_list_price",
+    "post_amount_paid",
+    "post_total_secs",
+    "post_n_days",
+    "post_rate",
+    "vol_ratio",
+    "is_silent_renewer",
+    "has_post_evidence",
+    "has_evidence",
+    "post_observed_but_silent",
+    "last_pre_txn_date"
+  ],
+  "feature_groups": {
+    "behavioural_pre": [
+      "pre_total_secs",
+      "pre_n_days",
+      "pre_rate"
+    ],
+    "transaction_event": [
+      "pre_list_price",
+      "pre_amount_paid",
+      "payment_plan_days",
+      "payment_method_id",
+      "is_auto_renew",
+      "is_cancel"
+    ],
+    "history_txn": [
+      "n_hist_txns",
+      "mean_hist_price",
+      "median_hist_paid",
+      "cancel_rate",
+      "auto_renew_rate",
+      "mode_pay_method",
+      "tenure_days",
+      "recency_days",
+      "has_hist_txn",
+      "n_prior_renewals",
+      "n_prior_cancels",
+      "n_prior_autorenew",
+      "prior_renewal_rate"
+    ],
+    "engagement_history": [
+      "obs_secs_per_active_day",
+      "recent_vs_life_ratio"
+    ],
+    "demographics": [
+      "city",
+      "bd",
+      "gender",
+      "registered_via",
+      "registration_init_time"
+    ]
+  },
+  "base_features": [
+    "pre_total_secs",
+    "pre_n_days",
+    "pre_rate",
+    "pre_list_price",
+    "pre_amount_paid",
+    "payment_plan_days",
+    "payment_method_id",
+    "is_auto_renew",
+    "is_cancel",
+    "n_hist_txns",
+    "mean_hist_price",
+    "median_hist_paid",
+    "cancel_rate",
+    "auto_renew_rate",
+    "mode_pay_method",
+    "tenure_days",
+    "recency_days",
+    "has_hist_txn",
+    "n_prior_renewals",
+    "n_prior_cancels",
+    "n_prior_autorenew",
+    "prior_renewal_rate",
+    "obs_secs_per_active_day",
+    "recent_vs_life_ratio",
+    "city",
+    "bd",
+    "gender",
+    "registered_via",
+    "registration_init_time"
+  ],
+  "horizons": [
+    1,
+    7,
+    14,
+    30,
+    60
+  ],
+  "horizon_features": {
+    "1": [
+      "h1_secs",
+      "h1_ndays",
+      "h1_rate",
+      "h1_active"
+    ],
+    "7": [
+      "h7_secs",
+      "h7_ndays",
+      "h7_rate",
+      "h7_active"
+    ],
+    "14": [
+      "h14_secs",
+      "h14_ndays",
+      "h14_rate",
+      "h14_active"
+    ],
+    "30": [
+      "h30_secs",
+      "h30_ndays",
+      "h30_rate",
+      "h30_active"
+    ],
+    "60": [
+      "h60_secs",
+      "h60_ndays",
+      "h60_rate",
+      "h60_active"
+    ]
+  },
+  "engagement_history": {
+    "obs_secs_per_active_day": "mean listening seconds per active day over ALL observed pre-E log days (left-censored by the user_logs date range)",
+    "recent_vs_life_ratio": "pre_rate / obs_secs_per_active_day; recent 30-day intensity relative to the user own long-run baseline (>1 = up vs baseline)"
+  },
+  "sequence_panel": {
+    "path": "events_daily_panel.parquet",
+    "window_days": 60,
+    "features": [
+      "total_secs",
+      "num_100",
+      "num_unq",
+      "num_25"
+    ],
+    "key": [
+      "msno",
+      "E",
+      "offset"
+    ],
+    "note": "long format; one row per (msno, E, active-day) with offset in [-SEQ_WINDOW_DAYS, -1]. Pivot + pad per event for the GRU/LSTM."
+  },
+  "splits": {
+    "user_fold": "user-grouped 5-fold CV (no user spans folds); -1 = held-out user",
+    "is_holdout": "final held-out test users (~15%); exclude from all training/CV",
+    "month_idx": "ordinal expiry-month index for walk-forward (train month_idx <= t, test t + 1)",
+    "is_modellable": "label != INSUFFICIENT_DATA"
+  },
+  "data_files": {
+    "tabular": "events_engineered.parquet",
+    "sequences": "events_daily_panel.parquet"
+  }
+}
