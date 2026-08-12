@@ -59,9 +59,7 @@ source .venv/bin/activate        # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-All jobs was ran and validated in a Python 3.13.8 enviroment, we can not guarantee no issues for any other version. The pinned versions match the environment used to
-produce the reported numbers. A CPU-only install reproduces everything; a
-CUDA/MPS build of PyTorch only accelerates `Classify_03`.
+All jobs were run and validated in a Python 3.13.8 environment; compatibility with other Python versions is not guaranteed. The pinned versions match the environment used to produce the reported numbers. A CPU-only install reproduces everything; a CUDA/MPS build of PyTorch only accelerates `Classify_03`.
 
 ---
 
