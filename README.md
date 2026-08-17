@@ -13,6 +13,8 @@ The repository is organised so that an examiner can either **fully reproduce** t
 pipeline from the raw Kaggle data, or **quickly verify** the reported statistics
 from the committed run-level results without any expensive computation.
 
+**Final dissertation:** [Dissertation_Final_JesperPhillips.pdf](Dissertation_Final_JesperPhillips.pdf)
+
 ---
 
 ## Repository layout
