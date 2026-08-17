@@ -1,5 +1,5 @@
 # Python dependencies for "Beyond Binary Churn".
-# Versions are pinned to the environment used to produce the reported results.
+# Versions are pinned to define a reproducible repository environment.
 # A recent CPU-only install of these packages reproduces every notebook; a CUDA
 # build of PyTorch is optional and only speeds up Classify_03 (deep learning).
 
