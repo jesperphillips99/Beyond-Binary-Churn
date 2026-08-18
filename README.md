@@ -120,8 +120,8 @@ The figures reported in the dissertation are already present in `FinalPlots/`.
 
 ### Reproducibility notes
 
-- All randomness is seeded through `clf_utils.py` (`RANDOM_STATE = 42`,
-  `RUN_SEEDS = [42, 43, 44, 45, 46]`); repeated-run metrics are reported as
+- The repeated-holdout protocol uses the fixed seeds defined in `clf_utils.py`
+  (`RUN_SEEDS = [42, 43, 44, 45, 46]`); repeated-run metrics are reported as
   mean ± standard error over those five seeds.
 - Hyper-parameter tuning is cached under `KKBoxData/sweeps/`. The committed
   per-run best-parameter files let the modelling notebooks refit the final

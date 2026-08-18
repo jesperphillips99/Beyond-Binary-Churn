@@ -158,7 +158,7 @@ def y_movement(df: pd.DataFrame) -> np.ndarray:
 # Splits
 # --------------------------------------------------------------------------- #
 def dev_mask(df: pd.DataFrame) -> np.ndarray:
-    """Development rows: not in the final held-out user set."""
+    """Development rows: not in the current user-grouped holdout set."""
     return (df["is_holdout"] == 0).to_numpy()
 
 
