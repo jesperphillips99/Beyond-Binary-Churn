@@ -141,6 +141,16 @@ The raw data is not redistributed here and is subject to Kaggle's competition
 rules and KKBox's data terms; download it directly from Kaggle. See
 `KKBoxData/RawData/README.md` for the required files and conversion step.
 
+## Generative AI Use
+
+I used generative AI tools such as ChatGPT and GitHub Copilot throughout the project as coding and writing support. This included things like debugging, improving or refactoring code, making code more efficient, adding comments, helping with Python syntax, LaTeX and formatting, Markdown explanations in notebooks, code comments, and polishing short sections of writing.
+
+AI was used more heavily when preparing this GitHub repository for submission, mainly to clean up the repo, improve comments and Markdown, organise the files, and make the reproduction steps easier to follow.
+
+I wrote and developed the code used for the project, with AI tools (VSCode GitHub Copilot) used to assist with improving, debugging, refactoring, and documenting that implementation. The actual research and technical work is my own. I decided the research questions, how the dataset and labels were constructed, which models and experiments to run, how the evaluation and leakage controls should work, and how the results were interpreted. Any AI-assisted code was reviewed, tested, and understood by me before being included.
+
+
+
 ## License
 
 The code, notebooks, and documentation in this repository are released under the
